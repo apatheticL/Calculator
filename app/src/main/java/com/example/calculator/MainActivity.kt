@@ -32,10 +32,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun buttonNumberClick(view: View) {
-
         check((view as Button).text.toString())
         edt_math.text = string
-
     }
     override fun onClick(view: View) {
         when (view.id) {
