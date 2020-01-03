@@ -110,7 +110,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 operator = 0
             }
             R.id.btn_sqrt -> {
-                edt_reb.text = (Math.sqrt(soA)).toString()
+
+                edt_reb.text = (Math.sqrt(string.toDouble())).toString()
             }
             R.id.btn_n -> {
                 var s: Double = edt_math.text.toString().toDouble()
