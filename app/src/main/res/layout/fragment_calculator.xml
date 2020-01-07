@@ -4,243 +4,262 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_rowWeight="5"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/text_math"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="90dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp" />
+        android:textSize="@dimen/text_view"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="15dp" />
 
     <TextView
         android:id="@+id/text_result"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        app:layout_constraintTop_toBottomOf="@id/text_math"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_math"
+        android:textSize="@dimen/text_view"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        tools:layout_editor_absoluteX="16dp" />
+    <Button
+        android:id="@+id/button_remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="4"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout_1"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="C"
+        android:textSize="@dimen/buttons"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_result"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_remove"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="C"
-            android:textSize="25sp"
-            tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/button_percent"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="%"
+        android:textSize="@dimen/buttons"
+        app:layout_constraintBottom_toBottomOf="@+id/button_remove"
+        app:layout_constraintStart_toEndOf="@+id/button_remove"
+        app:layout_constraintTop_toTopOf="@+id/button_remove"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_n"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="%"
-            android:textSize="25sp"
-            tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/button_sqrt"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="SQRT"
+        android:textSize="@dimen/buttons"
+        app:layout_constraintBottom_toBottomOf="@+id/button_percent"
+        app:layout_constraintStart_toEndOf="@+id/button_percent"
+        app:layout_constraintTop_toTopOf="@+id/button_percent"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_sqrt"
-            android:layout_width="95dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="SQRT"
-            tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/button_division"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="@dimen/buttons"
+        app:layout_constraintBottom_toBottomOf="@+id/button_sqrt"
+        app:layout_constraintStart_toEndOf="@+id/button_sqrt"
+        app:layout_constraintTop_toTopOf="@+id/button_sqrt"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_division"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="/"
-            android:textSize="25sp"
-            tools:ignore="MissingConstraints" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_1"
+    <Button
+        android:id="@+id/button_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="4"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout_2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints">
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:onClick="buttonNumberClick"
+        android:text="1"
+        android:textSize="@dimen/buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_remove"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="1"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="2"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="3"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_plus"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="+"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_2"
+    <Button
+        android:id="@+id/button_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:weightSum="4"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout_3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints">
+        android:onClick="buttonNumberClick"
+        android:text="2"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_1"
+        app:layout_constraintStart_toEndOf="@+id/button_1"
+        app:layout_constraintTop_toTopOf="@+id/button_1"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="4"
-            android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/btn_5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="5"
-            android:textSize="25sp" />
+    <Button
+        android:id="@+id/button_3"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="17dp"
+        android:onClick="buttonNumberClick"
+        android:text="3"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_2"
+        app:layout_constraintStart_toEndOf="@+id/button_2"
+        app:layout_constraintTop_toTopOf="@+id/button_2"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_6"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="6"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_subtraction"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text=" - "
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_3"
+    <Button
+        android:id="@+id/button_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="4"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout_4"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints">
+        android:layout_marginTop="17dp"
+        android:text="+"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_3"
+        app:layout_constraintStart_toEndOf="@+id/button_3"
+        app:layout_constraintTop_toTopOf="@+id/button_3"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_7"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="7"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_8"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="8"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_9"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="9"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_multiplication"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="x"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_4"
+    <Button
+        android:id="@+id/button_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints">
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="buttonNumberClick"
+        android:text="4"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_1"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_negative"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="+/-"
-            android:textSize="25sp" />
+    <Button
+        android:id="@+id/button_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="5"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_4"
+        app:layout_constraintStart_toEndOf="@+id/button_4"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_0"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="0"
-            android:textSize="25sp" />
+    <Button
+        android:id="@+id/button_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="6"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_4"
+        app:layout_constraintStart_toEndOf="@+id/button_5"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_dot"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="."
-            android:textSize="25sp" />
+    <Button
+        android:id="@+id/button_subtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_4"
+        app:layout_constraintStart_toEndOf="@+id/button_6"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btn_equal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="="
-            android:textSize="25sp" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/button_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="buttonNumberClick"
+        android:text="7"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="8"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_7"
+        app:layout_constraintStart_toEndOf="@+id/button_7"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="9"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_7"
+        app:layout_constraintStart_toEndOf="@+id/button_8" />
+
+
+    <Button
+        android:id="@+id/button_multiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_7"
+        app:layout_constraintStart_toEndOf="@+id/button_9"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_negative"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="+/-"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_7" />
+
+    <Button
+        android:id="@+id/button_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="0"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_negative"
+        app:layout_constraintStart_toEndOf="@+id/button_negative" />
+
+    <Button
+        android:id="@+id/button_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonNumberClick"
+        android:text="."
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_negative"
+        app:layout_constraintStart_toEndOf="@+id/button_0"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_negative"
+        app:layout_constraintStart_toEndOf="@+id/button_dot" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
