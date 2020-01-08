@@ -2,7 +2,6 @@ package com.example.calculator
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,35 +30,34 @@ class CalculatorFragment : Fragment(), View.OnClickListener {
     }
 
     private fun configView() {
-        button_division.setOnClickListener(this)
-        button_equal.setOnClickListener(this)
-        button_multiplication.setOnClickListener(this)
-        button_plus.setOnClickListener(this)
+        buttonDivision.setOnClickListener(this)
+        buttonEqual.setOnClickListener(this)
+        buttonMultiplication.setOnClickListener(this)
+        buttonPlus.setOnClickListener(this)
         button_subtraction.setOnClickListener(this)
-        button_percent.setOnClickListener(this)
-        button_remove.setOnClickListener(this)
-        button_negative.setOnClickListener(this)
-        button_sqrt.setOnClickListener(this)
+        buttonPercent.setOnClickListener(this)
+        buttonRemove.setOnClickListener(this)
+        buttonNegative.setOnClickListener(this)
+        buttonSqrt.setOnClickListener(this)
     }
 
-    @SuppressLint("ShowToast")
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.button_multiplication -> {
+            R.id.buttonMultiplication -> {
                 if (checkEmpty(result)) {
                     addFirstNumber()
                     operater = 1
                 }
             }
-            R.id.button_plus -> {
+            R.id.buttonPlus -> {
                 if (checkEmpty(result)) {
                     addFirstNumber()
                     operater = 2
                 }
             }
-            R.id.button_negative -> {
+            R.id.buttonNegative -> {
             }
-            R.id.button_division -> {
+            R.id.buttonDivision -> {
                 if (checkEmpty(result)) {
                     addFirstNumber()
                     operater = 3
@@ -72,53 +70,53 @@ class CalculatorFragment : Fragment(), View.OnClickListener {
                 }
             }
             // 1: nhan, 2 cong, 3 chia 4 tru
-            R.id.button_equal -> {
+            R.id.buttonEqual -> {
                 if (checkEmpty(result)) {
                     secondNumber = result.toDouble()
                     when (operater) {
                         1 -> {
-                            text_math.text = ("$firstNumber * $secondNumber ")
-                            text_result.text = (firstNumber * secondNumber).toString()
+                            textMath.text = ("$firstNumber * $secondNumber ")
+                            textResult.text = (firstNumber * secondNumber).toString()
                         }
                         2 -> {
                             var t = firstNumber + secondNumber
-                            text_math.text = ("$firstNumber + $secondNumber ")
-                            text_result.text = t.toString()
+                            textMath.text = ("$firstNumber + $secondNumber ")
+                            textResult.text = t.toString()
                         }
                         3 -> {
                             if (!0.equals(secondNumber)) {
-                                text_math.text = ("$firstNumber / $secondNumber ")
-                                text_result.text = (firstNumber / secondNumber).toString()
+                                textMath.text = ("$firstNumber / $secondNumber ")
+                                textResult.text = (firstNumber / secondNumber).toString()
                             }
                         }
                         4 -> {
-                            text_math.text = ("$firstNumber - $secondNumber ")
-                            text_result.text = (firstNumber - secondNumber).toString()
+                            textMath.text = ("$firstNumber - $secondNumber ")
+                            textResult.text = (firstNumber - secondNumber).toString()
                         }
                     }
                 }
                 result = "0"
             }
-            R.id.button_remove -> {
-                text_math.text = "0"
-                text_result.text = "0"
+            R.id.buttonRemove -> {
+                textMath.text = "0"
+                textResult.text = "0"
                 result = "0"
                 firstNumber = 0.0
                 secondNumber = 0.0
                 operater = 0
             }
-            R.id.button_sqrt -> {
+            R.id.buttonSqrt -> {
                 try {
-                    text_result.text = (Math.sqrt(result.toDouble())).toString()
+                    textResult.text = (Math.sqrt(result.toDouble())).toString()
                 } catch (e: Exception) {
                     makeText(context, e.toString(), LENGTH_LONG)
                 }
 
             }
-            R.id.button_percent -> {
+            R.id.buttonPercent -> {
                 try {
-                    var s: Double = text_math.text.toString().toDouble()
-                    text_result.text = (s / 100).toString()
+                    var s: Double = textMath.text.toString().toDouble()
+                    textResult.text = (s / 100).toString()
                 } catch (e: Exception) {
                     makeText(context, e.toString(), LENGTH_LONG)
                 }
@@ -147,7 +145,7 @@ class CalculatorFragment : Fragment(), View.OnClickListener {
 
     fun buttonNumberClick(view: View) {
         check((view as Button).text.toString())
-        text_math.text = result
+        textMath.text = result
     }
 
     fun addFirstNumber() {
